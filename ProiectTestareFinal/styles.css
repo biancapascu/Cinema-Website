@@ -1,0 +1,274 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Raleway", sans-serif
+}
+
+    /* Movie Section Styling */
+
+    .movie-show-container {
+      margin-top: 0;
+      padding: 0 10%;
+  }
+
+  .movie-show-container>h1 {
+      color: #000000;
+      text-align: left;
+      padding: 0 0 10px 0;
+  }
+
+  .movie-show-container>h3 {
+      color: #ffffff;
+      text-align: left;
+      padding: 0 0 10px 0;
+  }
+
+  .movie-show-container>h3:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 7%;
+      background: #000000;
+      position: relative;
+      bottom: -10px;
+  }
+
+.movies-container {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto auto auto auto auto;
+  padding: 10px 0;
+}
+
+.movie-box {
+  position: relative;
+  margin: 10px 0;
+}
+
+.movie-box img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.movie-box .movie-info {
+  padding: 50% 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .7s ease;
+  background-color: rgb(0, 0, 0);
+}
+
+.movie-box:hover .movie-info {
+  opacity: 0.8;
+}
+
+.movie-info>h3 {
+  padding: 10px 0;
+  color: #FFF;
+}
+
+.movie-info>a {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #FFFFFF;
+  border-radius: 0.13em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.movie-info>a:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.modal-button {
+    padding: 12px 24px;
+    color: #000;
+    background-color:#fff;
+    border: 1px solid #ccc;
+    user-select: none;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    text-transform: none;
+    margin:0;
+    font: inherit;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 5%; /* Location of the box */
+    padding-right: 37%;
+    padding-bottom: 30%;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-image {
+    width: 40%;
+    float: left;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.modal-text {
+  font-size: 12px;
+}
+
+.modal-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 25%;
+}
+
+/* Modal Content */
+.modal-content {
+    float: right;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #E8E8E8;
+    color: #000;
+}
+
+.modal-body {padding: 2px 16px;}
+
+/* Popup container */
+.popup {
+    border-radius: 25px;
+    padding: 5px 5px;
+    color: #000;
+    background-color:#fff;
+    border: 1px solid #ccc;
+    user-select: none;
+    vertical-align: middle;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+  }
+  .popup .hide {
+    visibility: hidden;
+  }
+
+  .schedule-table {
+    border-style:hidden;
+    padding: 10px 0 10px 0;
+  }
+
+  .schedule-table td{
+    padding: 10px;
+    font-size: 12px;
+  }
+
+
+  .schedule-item {
+    display: inline-flexbox;
+    border-radius: 10%;
+    background-color: #E8E8E8;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .schedule-item:hover {
+    background-color: #bbb;
+    color: #000;
+    font-weight: bold;
+  }
+
